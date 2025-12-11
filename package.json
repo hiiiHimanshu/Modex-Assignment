@@ -1,0 +1,14 @@
+{
+  "name": "modex",
+  "version": "1.0.0",
+  "description": "Ticket Booking System - Full Stack Application",
+  "scripts": {
+    "build": "cd backend && npm install && npm run build && cd ../frontend && npm install && npm run build",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+

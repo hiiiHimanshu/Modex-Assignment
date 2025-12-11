@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "Ticket Booking API",
+    "_postman_id": "bc5df3cd-9d2f-4bc8-a8e3-collection",
+    "description": "Basic CRUD + booking flows for the ticketing system.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Create show",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"City Express\",\n  \"startTime\": \"2024-12-12T15:00:00Z\",\n  \"totalSeats\": 40\n}"
+        },
+        "url": "{{baseUrl}}/shows"
+      }
+    },
+    {
+      "name": "List shows",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/shows"
+      }
+    },
+    {
+      "name": "Show detail",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/shows/{{showId}}"
+      }
+    },
+    {
+      "name": "Book seats",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userName\": \"Ava\",\n  \"seats\": [1,2,3]\n}"
+        },
+        "url": "{{baseUrl}}/shows/{{showId}}/bookings"
+      }
+    },
+    {
+      "name": "Booking status",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/bookings/{{bookingId}}"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000"
+    },
+    {
+      "key": "showId",
+      "value": ""
+    },
+    {
+      "key": "bookingId",
+      "value": ""
+    }
+  ]
+}
